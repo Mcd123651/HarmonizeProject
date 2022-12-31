@@ -347,8 +347,9 @@ def averageimage():
 def init_video_capture():
     try:
         if commandlineargs.stream_filename is None:
-            #cap = cv2.VideoCapture(0,cv2.CAP_FFMPEG) #variable cap is our raw video input
-            cap = cv2.VideoCapture(0,cv2.CAP_GSTREAMER) #variable cap is our raw video input
+            #cap = cv2.VideoCapture(0)
+            cap = cv2.VideoCapture(0,cv2.CAP_FFMPEG) #variable cap is our raw video input
+            #cap = cv2.VideoCapture(0,cv2.CAP_GSTREAMER) #variable cap is our raw video input
         else:
             cap = cv2.VideoCapture(commandlineargs.stream_filename) #capture from given file/url
     except:
